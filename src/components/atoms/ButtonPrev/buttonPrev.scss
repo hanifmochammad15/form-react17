@@ -1,0 +1,41 @@
+$base-color: #999999;
+$background-color: #BDBDBD;
+$active-color:  #E0E0E0;
+
+.button {
+    display: flex;
+    height: 30px;
+    padding: 0;
+    background: $base-color;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    overflow: hidden;
+    font-family: "Quicksand", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background: $background-color;
+  }
+  
+  .button:active {
+    background: $active-color;
+  }
+  
+  .button__text,
+  .button__icon {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 24px;
+    color: #fff;
+    height: 100%;
+  }
+  
+  .button__icon {
+    font-size: 1.5em;
+    background: rgba(0, 0, 0, 0.08);
+  }
+  

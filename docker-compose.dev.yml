@@ -1,0 +1,17 @@
+version: "1.0"
+
+services:
+  app:
+    container_name: surrounding-app-webview-qris-dev
+    image: images-webview-mms:latest
+    build:
+      context: ./home/brispot
+      dockerfile: Dockerfile.dev
+      target: development
+    networks:
+      - dev_konsumer
+    volumes:
+      - /home/administrator/surrounding-app/reactjs_webview/src/:/app/src
+    ports:
+      - 3003:3000
+    restart: always

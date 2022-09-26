@@ -1,0 +1,50 @@
+$base-color: #F87304;
+$background-color: #F98A2E;
+$active-color:  #ff933a;
+
+.button-done{
+    width: 240px;
+    height: 56px;
+    background: $base-color;
+    border: none;
+    outline: none;
+    border-radius: 35px;
+    overflow: hidden;
+    font-weight: 500;
+    font-family: "Quicksand", sans-serif;
+    color:#fff;
+}
+
+.button-done:hover {
+    background: $background-color;
+  }
+  
+  .button-done:active {
+    background: $active-color
+  }
+  
+$base-color-retry: #E84040;
+$background-color-retry: #E94040;
+$active-color-retry:  #E75a5a;
+
+.button-retry{
+    width: 240px;
+    height: 56px;
+    background: $base-color-retry;
+    border: none;
+    outline: none;
+    border-radius: 35px;
+    overflow: hidden;
+    font-weight: 500;
+    font-family: "Quicksand", sans-serif;
+    color:#fff;
+}
+
+.button-retry:hover {
+    background: $background-color-retry;
+  }
+  
+  .button-retry:active {
+    background: $active-color-retry;
+  }
+  

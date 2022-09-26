@@ -1,0 +1,30 @@
+# base images
+FROM image-repo.bri.co.id/brispot/base-alpine-konsumer:node16.13
+ENV HTTP_PROXY=http://172.18.104.20:1707
+ENV HTTPS_PROXY=http://172.18.104.20:1707
+# add python 
+RUN apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python
+
+RUN python3 -m ensurepip
+# install pip dan setuptools
+RUN pip3 install --no-cache --upgrade pip setuptools
+# work directory
+WORKDIR /home/brispot
+# copy file ke folder brispot
+COPY . /home/brispot
+# in folder brispot
+RUN cd /home/brispot
+# compare package.json on base alpin with package.json on project
+RUN npm ci
+# create build reactjs
+RUN npm run build
+# in folder brispot 
+RUN cd /home/brispot
+# del folder node_modules
+RUN rm -R node_modules
+# expose port and define CMD
+CMD ["serve", "-s", "build"]
+
+EXPOSE 3001
+
+USER root
